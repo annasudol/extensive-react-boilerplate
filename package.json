@@ -3,10 +3,10 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "build:e2e": "cp -n example.env.local .env.local && next build",
-    "start": "next start",
+    "dev": "node init && next dev --turbopack",
+    "build": "node init && next build",
+    "build:e2e": "node init && cp -n example.env.local .env.local && next build",
+    "start": "node init && next start",
     "lint": "next lint",
     "prepare": "is-ci || husky",
     "release": "release-it",
@@ -15,7 +15,7 @@
     "generate:field": "hygen generate field",
     "postgenerate:field": "npm run lint -- --fix",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "node init && storybook build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
